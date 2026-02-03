@@ -18,9 +18,9 @@ from util.misc import NestedTensor, interpolate
 
 from .backbone import build_backbone
 from .transformer import build_transformer
-# from .transformer_stage2 import build_transformer
-#
-# from .transformer_retriv import build_transformer
+# from .transformer_ft import build_transformer
+# from .transformer_pre2 import build_transformer
+# from .transformer_pre1 import build_transformer
 from util.box_ops import box_cxcywh_to_xyxy, box_iou
 
 
