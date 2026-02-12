@@ -32,11 +32,11 @@ def get_args_parser():
 
     # Dataset specific
     parser.add_argument("--data_root", default='./dataset/sk_vg')
-    parser.add_argument('--max_query_len', default=15, type=int,
+    parser.add_argument('--max_query_len', type=int,
                         help='maximum time steps (lang length) per batch')
-    parser.add_argument('--max_knowledge_len', default=128, type=int,
+    parser.add_argument('--max_knowledge_len', type=int,
                         help='maximum time steps (lang length) per batch')
-    parser.add_argument('--imsize', default=640, type=int, help='image size')
+    parser.add_argument('--imsize', default=1200, type=int, help='image size')
 
     # Augmentation options
     parser.add_argument('--aug_blur', action='store_true',
@@ -54,7 +54,7 @@ def get_args_parser():
     parser.add_argument("--lr_retriver", default=1e-5, type=float)
     parser.add_argument("--lr_backbone", default=5e-6, type=float)
     parser.add_argument("--text_encoder_lr", default=2e-5, type=float)
-    parser.add_argument("--batch_size", default=4, type=int)
+    parser.add_argument("--batch_size", default=8, type=int)
     parser.add_argument("--weight_decay", default=5e-4, type=float)
     parser.add_argument("--epochs", default=40, type=int)
     parser.add_argument("--lr_drop", default=15, type=int)
@@ -142,7 +142,7 @@ def get_args_parser():
         type=int,
         help="Number of attention heads inside the transformer'tokenzier attentions",
     )
-    parser.add_argument("--num_queries", default=200, type=int, help="Number of query slots")
+    parser.add_argument("--num_queries", default=100, type=int, help="Number of query slots")
     parser.add_argument("--pre_norm", action="store_true")
     parser.add_argument(
         "--no_pass_pos_and_query",
